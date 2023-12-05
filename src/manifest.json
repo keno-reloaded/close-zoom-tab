@@ -1,0 +1,24 @@
+{
+  "name": "Close Zoom Tab",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Closes Zoom tab after opening desktop app",
+  "homepage_url": "https://github.com/keno-reloaded/close-zoom-tab",
+  "icons": {
+    "48": "icons/48.png",
+    "96": "icons/96.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.zoom.us/j/*", "https://*.zoom.us/j/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["activeTab"]
+}
