@@ -5,5 +5,5 @@
     if (hasSuccess) {
       chrome.runtime.sendMessage({ closeThis: true });
     }
-  }, 2000);
+  }, 5000);
 })();
